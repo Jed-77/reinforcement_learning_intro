@@ -30,7 +30,7 @@ def to_bin(value, bins):
 
 
 class FeatureTransformer:
-    """ A user class which is effectively a customised sklearn transforer. We create 10 bins for each of the four elements
+    """ A user class which is effectively a customised sklearn transformer. We create 10 bins for each of the four elements
     within the state vector using the constructor. We then transform the state to an integer using the functions above. So
     the state vector will range from 0000->9999"""
     def __init__(self):
@@ -93,7 +93,7 @@ def play_one(model, eps, gamma):
     iters = 0
     # play the game
     while not done:
-        action = model.sample_action(observation, eps)   # use episilon greedy to get action (one that maximises Q, probably)
+        action = model.sample_action(observation, eps)   # use epsilon greedy to get action (one that maximises Q, probably)
         prev_observation = observation                   # save the previous state
         observation, reward, done, info = model.env.step(action)   # take the action and get resulting information
         totalreward += reward    # keep track of total reward
